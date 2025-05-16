@@ -22,8 +22,7 @@ on:
 jobs:
   plan:
     name: Plan with Terraform
-    runs-on:
-      self-hosted
+    runs-on: self-hosted
     concurrency: nprd2-network-tfstate
     environment: bdonprd2-nprd2-plan
     permissions:
@@ -96,8 +95,7 @@ jobs:
   apply:
     needs: plan
     name: Apply with Terraform
-    runs-on:
-      self-hosted
+    runs-on: self-hosted
     concurrency: nprd2-network-tfstate
     environment: bdonprd2-nprd2-apply
     permissions:

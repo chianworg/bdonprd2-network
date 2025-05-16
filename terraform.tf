@@ -7,7 +7,7 @@ terraform {
     }
   }
 
-  # assume use back the same runners as alz and same storage account
+  # use back the same storage account as the one used in alz but in a different tfstate file
   backend "azurerm" {
     resource_group_name  = "rg-bdonprd2-nprd2-state-southeastasia-006"
     storage_account_name = "stobdonprsou006cyrm"
