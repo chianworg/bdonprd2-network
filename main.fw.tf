@@ -1,6 +1,6 @@
 resource "azurerm_firewall_policy_rule_collection_group" "example" {
   name               = "example-fwpolicy-rcg"
-  firewall_policy_id = data.terraform_remote_state.alz_output.outputs.virtual_wan_firewall_policy_ids[0]
+  firewall_policy_id = data.terraform_remote_state.alz_output.outputs.virtual_wan_firewall_policy_ids.primary
   priority           = 500
   application_rule_collection {
     name     = "app_rule_collection1"
