@@ -44,7 +44,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_wrapper: false
-          terraform_version: ${{ inputs.terraform_cli_versions }}
+          terraform_version: ${{ inputs.terraform_cli_version }}
 
       - name: Terraform Init
         run: |
@@ -89,16 +89,11 @@ jobs:
       AZAPI_RETRY_GET_AFTER_PUT_MAX_TIME: "60m" # Accounts for eventually consistent management group permissions propagation
 
     steps:
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: module
-
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_wrapper: false
-          terraform_version: ${{ inputs.terraform_cli_versions }}
+          terraform_version: ${{ inputs.terraform_cli_version }}
 
       - name: Terraform Init
         run: |
